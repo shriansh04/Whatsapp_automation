@@ -21,7 +21,7 @@ class MessageViewSet(viewsets.ModelViewSet):
             print("false")
             return Response({'error': 'To and Body are required'}, status=status.HTTP_400_BAD_REQUEST)
         # whatsapp = WhatsApp(settings.HEYOO_ACCESS_TOKEN, settings.HEYOO_API_URL)
-        whatsapp = WhatsApp(settings.HEYOO_ACCESS_TOKEN, phone_number_id = '256945444179931')
+        whatsapp = WhatsApp(settings.HEYOO_ACCESS_TOKEN, phone_number_id = settings.HEYOO_PHONE_ID)
         response = whatsapp.send_message(body, to)
         
 
@@ -42,7 +42,7 @@ class MessageViewSet(viewsets.ModelViewSet):
             print("false")
             return Response({'error': 'To and Body are required'}, status=status.HTTP_400_BAD_REQUEST)
         # whatsapp = WhatsApp(settings.HEYOO_ACCESS_TOKEN, settings.HEYOO_API_URL)
-        whatsapp = WhatsApp(settings.HEYOO_ACCESS_TOKEN, phone_number_id = '256945444179931')
+        whatsapp = WhatsApp(settings.HEYOO_ACCESS_TOKEN, phone_number_id = settings.HEYOO_PHONE_ID)
         response = whatsapp.send_template(body, to,components=[])
         
 
